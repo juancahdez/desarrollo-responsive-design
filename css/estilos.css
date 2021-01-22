@@ -368,6 +368,22 @@ figure {
     flex-wrap: inherit;
 }
 
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(22, 33, 39, 8);
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: white;
+}
+
 /* desktiop first que empices desde el MQ mas grande */
 
 @media screen and (max-width: 1024px) {
@@ -418,7 +434,10 @@ figure {
 }
 
 @media screen and (max-width: 767px) {
-                                                                                                                                                                                      
+    
+    .burger-button {
+        display: block;
+    }
 
    .header {
         display: block;
