@@ -204,12 +204,34 @@ figure {
 
 .header a {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
     height: inherit;
     display: flex;
     align-items: center;
     padding: 0 10px;
     flex-wrap: wrap;
+    height: 40px;
+    font-size: 2em;
+    margin-bottom: .5em;
+}
+
+.menu   {
+    position: fixed;
+    background: rgba(5, 111, 255, .9);
+    z-index: 3;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    /* height: 100vh; */
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.menu.is-active {
+    left: 0;
 }
 
 .flexbox {
