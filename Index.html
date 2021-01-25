@@ -158,25 +158,31 @@
       </div>
     </footer> 
     <script> /* tag para poner Javascript dentro de nuestro html*/
-        
-        
-      console.log("hola mundo es mi primera linea en JS");    /* Con el console log podemos poner mensajes  que se vean dentro de nuestras developer tools*/  
-      
-      
+  
+      /* console.log("hola mundo es mi primera linea en JS"); */    /* Con el console log podemos poner mensajes  que se vean dentro de nuestras developer tools*/  
+      const ipad = window.matchMedia('screen and (max-width: 767px)');
       const menu = document.querySelector('.menu');    /* Con el document.querySelector estoy agregando la clase .menu y con el "const" le estoy dando el valor de una variable en este a esa clase */
-      console.log(menu);
+      /* console.log(menu); */
       const burgerButton = document.querySelector('#burger-menu');    /* Aqui hicimos lo mismo pero lo unico diferente que se puso fue que mi clase #burger-manu se puso así ya que agregamos "id" que lo hace ver como valor unico */ 
-      console.log(burgerButton);
+      /* console.log(burgerButton); */
       
-      burgerButton.addEventListener('click', hideshow)    /* En este punto agregamos a nuestro evento button un click, la funcion es addEvenListener y esta funcion recibe 2 parametros, primero el click y luego le decimos que queremos escuchar con ese click, que va a ser la funcion llamada "hideshow" */
       
-      function hideshow() {
-        if (menu.classList.contains('is-active')) {   /* Agregamos la condiconal si, si se cumple lo que hay en () se ejecute lo que tengamos dentro de las {}, contains es decir contiene lo de las clase, y aqui preguntamos si tiene la clase */
-          menu.classList.remove('is-active');  /* si tiene esta clase vamos a ocultarla */      
+      ipad.addListener(validation);
+function validation(event) {
+	if (event.matches) {
+        	console.log('true');
+                burgerButton.addEventListener('click', hideShow);    /* En este punto agregamos a nuestro evento button un click, la funcion es addEvenListener y esta funcion recibe 2 parametros, primero el click y luego le decimos que queremos escuchar con ese click, que va a ser la funcion llamada "hideshow" */
         } else {
-          menu.classList.add('is-active');    /* Si tiene esta clase vamos a mostrarla */    
+        	console.log('false');
+                burgerButton.removeEventListener('click', hideShow);    /* En este punto agregamos a nuestro evento button un click, la funcion es addEvenListener y esta funcion recibe 2 parametros, primero el click y luego le decimos que queremos escuchar con ese click, que va a ser la funcion llamada "hideshow" */
         }
-      }
+}
+
+function hideShow() {
+  menu.classList.contains('is-active')    /* Agregamos la condiconal si, si se cumple lo que hay en () se ejecute lo que tengamos dentro de las {}, contains es decir contiene lo de las clase, y aqui preguntamos si tiene la clase */
+  ? menu.classList.remove('is-active')
+  : menu.classList.add('is-active');    /* Si tiene esta clase vamos a mostrarla */
+}
     </script>
   </body>
 </html>
